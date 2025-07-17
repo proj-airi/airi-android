@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/lemonnekogh-airi-android-badge.png)](https://mseep.ai/app/lemonnekogh-airi-android)
+
 # アイリ Android
 
 A MCP server to allow ~~airi~~ LLM to use Android Device. This project is child project of [airi](https://github.com/moeru-ai/airi).
