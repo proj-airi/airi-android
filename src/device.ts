@@ -1,6 +1,6 @@
 import type { Client, DeviceClient } from '@devicefarmer/adbkit'
 import process from 'node:process'
-import Adb from '@devicefarmer/adbkit'
+import * as Adb from '@devicefarmer/adbkit'
 
 export class DeviceManager {
   #adbClient: Client
@@ -19,7 +19,7 @@ export class DeviceManager {
     const host = process.env.ADB_HOST || 'localhost'
     const port = Number.parseInt(process.env.ADB_PORT || '5037', 10)
 
-    this.#adbClient = Adb.createClient({ host, port })
+    this.#adbClient = Adb.Adb.createClient({ host, port })
   }
 
   // TODO: break into connect, and list devices

@@ -37,20 +37,34 @@ A MCP server that allows ~~airi~~ all LLMs to control Android devices. This proj
 
 ### Docker (Recommended)
 
+```bash
+docker run --rm -it -p 3000:3000 -e ADB_HOST=host.docker.internal ghcr.io/proj-airi/airi-android:v0.3.4
+# or stdio mode
+docker run --rm -i -e USE_STDIO=true -e ADB_HOST=host.docker.internal ghcr.io/proj-airi/airi-android:v0.3.4
+```
+
+For agents supporting MCP, you can use the following configuration:
+
 ```json5
 // mcp.json
 {
   "mcpServers": {
-    "airi-android": {
+    // http mode
+    "airi-android-http": {
+      "url": "http://localhost:3000"
+    },
+    // stdio mode
+    "airi-android-stdio": {
       "command": "docker",
       "args": [
         "run",
         "--rm",
-        "--init",
         "-i",
         "-e",
+        "USE_STDIO=true",
+        "-e",
         "ADB_HOST",
-        "ghcr.io/lemonnekogh/airi-android:v0.3.0"
+        "ghcr.io/proj-airi/airi-android:v0.3.4"
       ],
       "env": {
         "ADB_HOST": "host.docker.internal"

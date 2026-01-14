@@ -27,7 +27,10 @@ async function main() {
   if (useStdio) {
     const transport = new StdioServerTransport()
     await mcpServer.connect(transport)
-    console.log('Server is running on stdio')
+
+    process.once('SIGINT', () => {
+      mcpServer.close()
+    })
 
     return
   }
