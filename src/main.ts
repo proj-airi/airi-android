@@ -6,9 +6,12 @@ import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/
 import { Hono } from "hono";
 import { serve } from "bun";
 import { cors } from "hono/cors";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
 // Start the server
 async function main() {
+  const useStdio = process.env.USE_STDIO === "true";
+
   const mcpServer = new McpServer({
     name: packageJson.name,
     version: packageJson.version,
@@ -19,6 +22,14 @@ async function main() {
       mcpServer.registerTool<AnySchema, AnySchema>(tool.name, tool.config, tool.cb);
     });
   });
+
+  if (useStdio) {
+    const transport = new StdioServerTransport();
+    await mcpServer.connect(transport);
+    console.log("Server is running on stdio");
+
+    return
+  }
 
   const transport = new WebStandardStreamableHTTPServerTransport();
 
