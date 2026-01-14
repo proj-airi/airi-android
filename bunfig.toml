@@ -1,0 +1,8 @@
+[install]
+# Use production dependencies by default
+production = false
+
+[run]
+# Bun will automatically use .env files
+bun = true
+

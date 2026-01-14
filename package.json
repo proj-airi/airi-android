@@ -1,0 +1,31 @@
+{
+  "name": "airi-android",
+  "version": "0.3.0",
+  "description": "A MCP server to allow LLM to use Android Device",
+  "type": "module",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "bun run src/main.ts",
+    "build": "bun build src/main.ts --compile --outfile dist/airi-android",
+    "start": "bun run src/main.ts"
+  },
+  "keywords": [
+    "mcp",
+    "android",
+    "adb"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@devicefarmer/adbkit": "^3.3.8",
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "@types/bluebird": "^3.5.42",
+    "bluebird": "^3.7.2",
+    "hono": "^4.11.4",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.5",
+    "typescript": "^5.9.3"
+  }
+}

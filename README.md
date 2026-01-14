@@ -33,11 +33,11 @@ With Docker:
 
 ### Package manager
 
-1. Install `uv` [here](https://docs.astral.sh/uv/getting-started/installation/).
+1. Install `bun` [here](https://bun.sh/).
 2. Install dependencies.
 
     ```bash
-    uv sync
+    bun install
     ```
 
 ### ADB connection
@@ -50,7 +50,5 @@ With Docker:
 Run the mcp inspector it will start the server.
 
 ```bash
-uv run mcp dev src/main.py
+bun run src/main.ts
 ```
-
-Open the inspector at `http://localhost:6274`.
