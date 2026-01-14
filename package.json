@@ -1,6 +1,6 @@
 {
   "name": "airi-android",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A MCP server to allow LLM to use Android Device",
   "type": "module",
   "main": "src/main.ts",
