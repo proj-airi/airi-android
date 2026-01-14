@@ -51,7 +51,7 @@ For agents supporting MCP, you can use the following configuration:
   "mcpServers": {
     // http mode
     "airi-android-http": {
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000/mcp"
     },
     // stdio mode
     "airi-android-stdio": {
@@ -103,12 +103,25 @@ USE_STDIO=true bun run start
 # Install dependencies
 bun install
 
+# Run tests
+bun test
+
 # Start development server
 bun run dev
 
 # Build binary
 bun run build
+
+# Lint code
+bun run lint
+
+# Type check
+bun run typecheck
 ```
+
+### Contributing
+
+See [AGENTS.md](AGENTS.md) for code guidelines.
 
 ## Environment Variables
 

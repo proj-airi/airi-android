@@ -10,7 +10,8 @@
     "start": "bun run src/main.ts",
     "lint": "bun run eslint src",
     "lint:fix": "bun run eslint src --fix",
-    "typecheck": "bun run tsc --noEmit"
+    "typecheck": "bun run tsc --noEmit",
+    "test": "bun test"
   },
   "keywords": [
     "mcp",

@@ -13,7 +13,7 @@ interface TotalCPUStat {
   softirq: number
 }
 
-async function parseProcStat(output: string): Promise<TotalCPUStat | undefined> {
+export async function parseProcStat(output: string): Promise<TotalCPUStat | undefined> {
   const match = output.match(
     /cpu\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/,
   )
