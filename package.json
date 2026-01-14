@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "bun run src/main.ts",
     "build": "bun build src/main.ts --compile --outfile dist/airi-android",
-    "start": "bun run src/main.ts"
+    "start": "bun run src/main.ts",
+    "lint": "bun run eslint src",
+    "lint:fix": "bun run eslint src --fix",
+    "typecheck": "bun run tsc --noEmit"
   },
   "keywords": [
     "mcp",
@@ -25,7 +28,9 @@
     "zod": "^4.3.5"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^7.0.0",
     "@types/bun": "^1.3.5",
+    "eslint": "^9.39.2",
     "typescript": "^5.9.3"
   }
 }
