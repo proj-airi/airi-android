@@ -23,7 +23,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          scope: ${{ github.repository }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -35,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/lemonnekogh/airi-android:${{ github.ref_name }}
+          tags: ghcr.io/${{ github.repository_owner }}/airi-android:${{ github.ref_name }}
           context: .
           file: Dockerfile
           cache-from: type=gha
